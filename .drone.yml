@@ -17,3 +17,14 @@ steps:
   when:
     branch:
     - master
+
+- name: publish-api-docker
+    image: plugins/docker:1.12
+    username: ${DOCKER_USERNAME}
+    password: ${DOCKER_PASSWORD}
+    email: ${DOCKER_EMAIL}
+    repo: twogghub/go-droneci
+    tags:
+      - latest
+    dockerfile: ./Dockerfile
+    context: ./
