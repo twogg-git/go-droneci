@@ -8,15 +8,6 @@ steps:
   - go get -v -t -d ./...
   - go build
   - go test -v ./...
-
-- name: integration
-  image: golang
-  commands:
-  - go get -v -t -d ./...
-  - go test -v ./...
-  when:
-    branch:
-    - master
     
 - name: integration
   image: golang
