@@ -1,12 +1,7 @@
-FROM golang:1.10-alpine3.7 as builder
+FROM golang:1.10
 WORKDIR /go/src/go-droneci/main
 COPY . .
 RUN go get -d ./... && go build -o main .
-
-FROM alpine:3.8
-RUN apk --no-cache add ca-certificates
-WORKDIR /root/
-COPY --from=builder /go/src/go-droneci/main .
 
 EXPOSE 8080
 ENTRYPOINT ./main
