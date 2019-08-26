@@ -24,4 +24,5 @@ steps:
   password: ${DOCKER_PASSWORD}
   email: ${DOCKER_EMAIL}
   repo: twogghub/go-droneci
-  tags: 1.0
+  auto_tag: true
+  
