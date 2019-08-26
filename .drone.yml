@@ -20,7 +20,9 @@ steps:
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
   repo: twogghub/go-droneci
-  context: lalala
+  build_args:
+    - TARGET_IMAGE=twogghub/go-droneci
+    - TAG=1.0
   when:
     branch:
     - master
