@@ -1,14 +1,17 @@
-image golang:1.10
+kind: pipeline
+name: default
 
-script:  
-  - ./.drone/build.sh
+steps:
+- name: build
+  image: golang
+  commands:
+  - go build
+  - go test -short
 
-deploy:  
-  bash:
-    script:
-      - ./drone/deploy.sh
-
-notify:  
-  email:
-    recipients:
-      - email@example.com
+- name: integration
+  image: golang
+  commands:
+  - go test -v
+  when:
+    event:
+    - pull_request
