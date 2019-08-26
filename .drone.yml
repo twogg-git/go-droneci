@@ -7,20 +7,20 @@ steps:
   commands:
   - go get -v -t -d ./...
   - go build
-  - echo -n "5.2.6,5.2.4" > .tags
-  - go test -v ./...
-    
-- name: integration
+  - echo -n "1.0" > .tags
+  - echo -n "twogghub/go-droneci" > .repo
+  
+- name: testing
   image: golang
   commands:
   - go get -v -t -d ./...
   - go test -v ./...
-  when:
-    branch:
-    - master
 
-- name: docker
+- name: publish
   image: plugins/docker
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
   repo: twogghub/go-droneci
+  when:
+    branch:
+    - master
