@@ -24,7 +24,6 @@ steps:
   password: ${DOCKER_PASSWORD}
   email: ${DOCKER_EMAIL}
   repo: twogghub/go-droneci
-  tags:
-  - 1.0
+  tags: 1.0
   dockerfile: ./Dockerfile
   context: ./
