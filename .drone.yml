@@ -4,6 +4,6 @@ pipeline:
   backend:
     image: golang
     commands:
-      - go get
+      - go get -v -t -d ./...
       - go build
-      - go test -v
+      - go go test -v ./...
