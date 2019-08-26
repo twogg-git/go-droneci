@@ -14,5 +14,5 @@ steps:
   commands:
   - go test -v ./...
   when:
-    event:
-    - pull_request
+    branch:
+    - master
