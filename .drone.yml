@@ -17,6 +17,15 @@ steps:
   when:
     branch:
     - master
+    
+- name: integration
+  image: golang
+  commands:
+  - go get -v -t -d ./...
+  - go test -v ./...
+  when:
+    branch:
+    - master
 
 - name: publish
   image: plugins/docker:1.12
