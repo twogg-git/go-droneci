@@ -1,0 +1,14 @@
+image golang:1.10
+
+script:  
+  - ./.drone/build.sh
+
+deploy:  
+  bash:
+    script:
+      - ./drone/deploy.sh
+
+notify:  
+  email:
+    recipients:
+      - email@example.com
