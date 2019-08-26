@@ -19,8 +19,8 @@ steps:
   image: plugins/docker
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
-  repo: "twogghub/go-droneci"
-  tags: "1.0"
+  repo: 'twogghub/go-droneci'
+  label: twogghub/go-droneci
   when:
     branch:
     - master
