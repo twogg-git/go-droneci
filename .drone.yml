@@ -23,5 +23,6 @@ steps:
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
   repo: twogghub/go-droneci
-  tags: 1
+  auto_tag: true
+  auto_tag_suffix: linux-amd64
   
