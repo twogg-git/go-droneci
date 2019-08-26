@@ -22,7 +22,6 @@ steps:
   image: plugins/docker
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
-  repo: twogghub/go-droneci
-  auto_tag: true
-  auto_tag_suffix: linux-amd64
+  repo: go-droneci
+  tags: 1.0
   
