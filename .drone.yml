@@ -25,6 +25,6 @@ steps:
   email: ${DOCKER_EMAIL}
   repo: twogghub/go-droneci
   tags:
-  - latest
+  - 1.0
   dockerfile: ./Dockerfile
   context: ./
