@@ -23,4 +23,4 @@ steps:
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
   email: ${DOCKER_EMAIL}
-  repo: twogghub/go-droneci
+  repo: twogghub/go-droneci:1.0
