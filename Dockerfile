@@ -1,12 +1,6 @@
-FROM golang as builder
-WORKSPACE /go/src/github.com/go-droneci
-RUN CGO_ENABLED=0 GOOS=linux go build -o app main.go
-
-FROM scratch as production
-COPY --from=builder /go/src/github.com/go-droneci/app .
-CMD ["./app"]
-
-FROM alpine as debug
-COPY --from=builder /go/src/github.com/go-droneci/app .
-CMD ["./app"]
-
+FROM golang:1.10-alpine3.7
+WORKDIR /go/src/go-droneci/main
+COPY . .
+RUN go get -d ./... && go build -o main .
+EXPOSE 8080
+ENTRYPOINT ./main
