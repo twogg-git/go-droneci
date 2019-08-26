@@ -22,7 +22,6 @@ steps:
   image: plugins/docker
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
-  email: ${DOCKER_EMAIL}
   repo: twogghub/go-droneci
-  tags: twogghub/go-droneci:1.0
+  tags: 1
   
