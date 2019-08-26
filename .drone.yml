@@ -18,8 +18,11 @@ steps:
 
 - name: publish
   image: plugins/docker
-  username: ${DOCKER_USERNAME}
-  password: ${DOCKER_PASSWORD}
+  settings:
+  username:
+    from_secret: docker_username
+  password:
+    from_secret: docker_password
   repo: twogghub/go-droneci
   when:
     branch:
