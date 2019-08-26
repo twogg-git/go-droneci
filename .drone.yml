@@ -18,10 +18,9 @@ steps:
     branch:
     - master
 
-- name: publish
+- name: docker
   image: plugins/docker
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
   repo: twogghub/go-droneci
-  tags: [ 1, 1.1, latest ]  
-  registry: index.docker.io
+  tags: latest
