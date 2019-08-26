@@ -1,9 +1,10 @@
 kind: pipeline
+name: TwoggCI
 
-pipeline:
-  backend:
-    image: golang
-    commands:
-      - go get -v -t -d ./...
-      - go build
-      - go test -v ./...
+steps:
+- name: backend
+  image: golang
+  commands:
+  - go get -v -t -d ./...
+  - go build
+  - go test -v ./...
