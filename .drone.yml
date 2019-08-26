@@ -22,6 +22,6 @@ steps:
   image: plugins/docker
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
-  repo: go-droneci
-  tags: 1.0
-  
+  repo: twogghub/go-droneci
+  tags: [ 1, 1.1, latest ]  
+  registry: index.docker.io
