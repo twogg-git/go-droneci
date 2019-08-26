@@ -7,7 +7,8 @@ steps:
   commands:
   - go get -v -t -d ./...
   - go build
-  - echo -n "1.0, " > .tags
+  - echo -n "1.0" > .tags
+  - echo -n "twogghub/go-droneci" > .repository
   
 - name: testing
   image: golang
@@ -19,8 +20,7 @@ steps:
   image: plugins/docker
   username: ${DOCKER_USERNAME}
   password: ${DOCKER_PASSWORD}
-  repo: 'twogghub/go-droneci'
-  label: twogghub/go-droneci
+  repo: twogghub/go-droneci
   when:
     branch:
     - master
