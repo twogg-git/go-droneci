@@ -1,11 +1,12 @@
-FROM golang as builder
-WORKDIR /go/src/github.com/twogg-git/go-droneci
-RUN CGO_ENABLED=0 GOOS=linux go build -o demo main.go
+FROM golang:1.10-alpine3.7 as builder
+WORKDIR /go/src/go-droneci/main
+COPY . .
+RUN go get -d ./... && go build -o main .
 
-FROM scratch as production
-COPY --from=builder /go/src/github.com/twogg-git/go-droneci/demo .
-CMD ["./demo"]
+FROM alpine:3.8
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=builder /go/src/go-droneci/main .
 
-FROM alpine as debug
-COPY --from=builder /go/src/github.com/twogg-git/go-droneci/demo .
-CMD ["./demo"]
+EXPOSE 8080
+ENTRYPOINT ./main
