@@ -37,7 +37,8 @@ steps:
     password: pwd
     port: 25
     skip_verify: true
-    from: pipeline@go-droneci.com
+    from: pipeline@https://cloud.drone.io
+    attachment: build-result.xml
     when:
       status: [ changed, success ]
       
