@@ -7,8 +7,6 @@ steps:
   commands:
   - go get -v -t -d ./...
   - go build
-  - echo -n "1.0" > .tags
-  - echo -n "twogghub/go-droneci" > .repository
   
 - name: testing
   image: golang
@@ -24,6 +22,9 @@ steps:
     password:
       from_secret: DOCKER_PASSWORD
     repo: twogghub/go-droneci
+    tags:
+    - 1.1
+    - $DRONE_BRANCHE
   when:
     branch:
     - master
