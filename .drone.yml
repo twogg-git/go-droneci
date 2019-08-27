@@ -36,7 +36,10 @@ steps:
     username: user
     password: pwd
     port: 25
+    skip_verify: true
     from: drone@your-domain.com
+    recipients:
+      from_secret: MAIL_NOTIFIER
     when:
       status: [ changed, failure ]
 
