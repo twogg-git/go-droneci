@@ -32,7 +32,7 @@ steps:
 - name: notify
   image: drillster/drone-email
   settings: 
-    host: dockercomposejava_smtp_1
+    host: smtp
     username: user
     password: pwd
     port: 25
