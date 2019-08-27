@@ -15,6 +15,7 @@ http://plugins.drone.io/
 
 # Docker Plugin
 http://plugins.drone.io/drone-plugins/drone-docker/
+
 https://hub.docker.com/r/twogghub/go-droneci
 
 ```sh
@@ -41,7 +42,6 @@ https://cloud.drone.io/{your_user}/{your_repo}/settings
 ```
 
 # Email Plugin
-
 http://plugins.drone.io/drillster/drone-email/
 
 ```sh 
