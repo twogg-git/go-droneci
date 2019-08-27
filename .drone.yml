@@ -29,3 +29,20 @@ steps:
   when:
     branch:
     - master
+
+--- 
+kind: pipeline
+name: TwoggCI
+
+steps:
+- name: build2
+  image: golang
+  commands:
+  - go get -v -t -d ./...
+  - go build
+  
+- name: testing2
+  image: golang
+  commands:
+  - go get -v -t -d ./...
+  - go test -v ./...
