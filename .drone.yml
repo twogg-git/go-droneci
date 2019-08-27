@@ -28,11 +28,10 @@ steps:
   when:
     branch:
     - master
-    
-
       
-notify:
-    image: drillster/drone-email
+- name: notify
+  image: drillster/drone-email
+  settings:
     host: smtp.gmail.com
     username:
       from_secret:  MAIL_USERNAME
