@@ -31,14 +31,14 @@ steps:
 
 - name: notify
   image: drillster/drone-email
-    settings: 
-      host: dockercomposejava_smtp_1
-      username: user
-      password: pwd
-      port: 25
-      from: drone@your-domain.com
-      when:
-        status: [ changed, failure ]
+  settings: 
+    host: dockercomposejava_smtp_1
+    username: user
+    password: pwd
+    port: 25
+    from: drone@your-domain.com
+    when:
+      status: [ changed, failure ]
 
 services:
 - name: smtp
