@@ -23,10 +23,8 @@ steps:
       from_secret: DOCKER_PASSWORD
     repo: twogghub/go-droneci
     tags:
-      - ${DRONE_COMMIT_BRANCH}
       - 1.0.2
       - latest
-    compress: true
   when:
     branch:
     - master
