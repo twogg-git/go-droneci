@@ -1,5 +1,5 @@
 FROM golang as builder
-WORKSPACE /go/src/github.com/twogg-git/go-droneci
+WORKDIR /go/src/github.com/twogg-git/go-droneci
 RUN CGO_ENABLED=0 GOOS=linux go build -o demo main.go
 
 FROM scratch as production
