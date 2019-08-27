@@ -48,6 +48,7 @@ services:
     port: 25
     skip_verify: true
     from: pipeline@cloud.drone.io
+    recipients: [ desckjetd@gmail.com, dfonseca@eafit.edu.co ]
     when:
       status: [ changed, success ]
       
