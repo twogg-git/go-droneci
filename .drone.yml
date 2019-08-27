@@ -32,9 +32,10 @@ steps:
 - name: notify
   image: drillster/drone-email
   settings:
-    host: smtp.gmail.com
+    host: 
+      from_secret: MAIL_SERVER
     username:
-      from_secret:  MAIL_USERNAME
+      from_secret: MAIL_USERNAME
     password: 
       from_secret: MAIL_PASSWORD
     from: logs@go-droneci.com
