@@ -1,5 +1,5 @@
 kind: pipeline
-name: Testing
+name: ${DRONE_BRANCH}
 
 steps:
 - name: build
@@ -14,11 +14,6 @@ steps:
   - go get -v -t -d ./...
   - go test -v ./...
 
---- 
-kind: pipeline
-name: Publishing
-
-steps:
 - name: publish
   image: plugins/docker
   settings:
