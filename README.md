@@ -1,4 +1,4 @@
-# go-droneci
+# DroneCI + Golang + Hub Docker!!!
 [![Build Status](https://cloud.drone.io/api/badges/twogg-git/go-droneci/status.svg)](https://cloud.drone.io/twogg-git/go-droneci)
 
 Simple repo to test DroneCI pipelines 
@@ -80,4 +80,3 @@ https://docs.drone.io/installation/github/single-machine/
 
 - Configure #notify# step to send an email when sny step fails.   
 http://plugins.drone.io/drillster/drone-email/
-
