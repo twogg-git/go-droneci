@@ -14,6 +14,16 @@ steps:
   - go get -v -t -d ./...
   - go test -v ./...
       
+services:
+- name: smtp
+  image: catatnight/postfix
+  environment:
+    ports: 25
+    maildomain: cloud.drone.io
+    smtp_user: user:pwd
+    messageSizeLimit: 40960000
+    mailboxSizeLimit: 40960000
+
 - name: publish
   image: plugins/docker
   settings:
@@ -41,13 +51,3 @@ steps:
     when:
       status: [ changed, success ]
       
-services:
-- name: smtp
-  image: catatnight/postfix
-  environment:
-    ports: 25
-    maildomain: cloud.drone.io
-    smtp_user: user:pwd
-    messageSizeLimit: 40960000
-    mailboxSizeLimit: 40960000
-
