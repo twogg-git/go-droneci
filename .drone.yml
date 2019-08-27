@@ -28,3 +28,26 @@ steps:
   when:
     branch:
     - master
+
+- name: notify
+  image: drillster/drone-email
+    settings: 
+      host: dockercomposejava_smtp_1
+      username: user
+      password: pwd
+      port: 25
+      from: drone@your-domain.com
+      when:
+        status: [ changed, failure ]
+
+services:
+- name: smtp
+  image: catatnight/postfix
+  ports:
+    - "25:25"
+  environment:
+    - maildomain=emailboot.net
+    - smtp_user=user:pwd
+    - messageSizeLimit=40960000
+    - mailboxSizeLimit=40960000
+
