@@ -1,5 +1,5 @@
 # go-droneci
-[![Build Status](https://cloud.drone.io/api/badges/twogg-git/go-droneci/status.svg)](https://cloud.drone.io/twogg-git/go-droneci)
+[![Build Status](https://cloud.drone.io/api/badges/twogg-git/go-droneci/status.svg?ref=refs/heads/dev-101)](https://cloud.drone.io/twogg-git/go-droneci)
 
 Simple repo to test DroneCI pipelines 
 
