@@ -38,7 +38,6 @@ steps:
     port: 25
     skip_verify: true
     from: pipeline@cloud.drone.io
-    attachment: build-result.xml
     when:
       status: [ changed, success ]
       
