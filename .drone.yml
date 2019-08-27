@@ -28,3 +28,20 @@ steps:
   when:
     branch:
     - master
+    
+
+      
+notify:
+    image: drillster/drone-email
+    host: smtp.gmail.com
+    username:
+      from_secret:  MAIL_USERNAME
+    password: 
+      from_secret: MAIL_PASSWORD
+    from: logs@go-droneci.com
+    recipients:
+      from_secret: MAIL_NOTIFIER
+    when:
+      status: 
+        - updated
+        - failure    
