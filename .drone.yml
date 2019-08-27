@@ -21,7 +21,6 @@ steps:
       from_secret: DOCKER_USERNAME
     password:
       from_secret: DOCKER_PASSWORD
-    compress: true
     repo: twogghub/go-droneci
     tags:
       - 1.0.2
