@@ -46,8 +46,8 @@ services:
   ports:
     - "25:25"
   environment:
-    - maildomain=emailboot.net
-    - smtp_user=user:pwd
-    - messageSizeLimit=40960000
-    - mailboxSizeLimit=40960000
+    - maildomain: emailboot.net
+    - smtp_user: user:pwd
+    - messageSizeLimit: 40960000
+    - mailboxSizeLimit: 40960000
 
