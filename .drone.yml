@@ -8,12 +8,6 @@ steps:
   - go get -v -t -d ./...
   - go build
   
-- name: testing
-  image: golang
-  commands:
-  - go get -v -t -d ./...
-  - go test -v ./...
-
 - name: notify
   image: drillster/drone-email
   settings: 
@@ -25,6 +19,12 @@ steps:
     from: pipeline@go-droneci.com
     when:
       status: [ changed, failure ]
+      
+- name: testing
+  image: golang
+  commands:
+  - go get -v -t -d ./...
+  - go test -v ./...
 
 - name: publish
   image: plugins/docker
