@@ -18,7 +18,7 @@ steps:
     skip_verify: true
     from: pipeline@go-droneci.com
     when:
-      status: [ changed, failure ]
+      status: [ changed, fail ]
       
 - name: testing
   image: golang
