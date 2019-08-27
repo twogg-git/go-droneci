@@ -47,7 +47,7 @@ services:
   image: catatnight/postfix
   environment:
     ports: 25
-    maildomain: go-droneci.com
+    maildomain: cloud.drone.io
     smtp_user: user:pwd
     messageSizeLimit: 40960000
     mailboxSizeLimit: 40960000
