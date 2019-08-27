@@ -7,9 +7,16 @@ steps:
   commands:
   - go get -v -t -d ./...
   - go build
-  
+      
+- name: testing
+  image: golang
+  commands:
+  - go get -v -t -d ./...
+  - go test -v ./...
+
 - name: notify
   image: drillster/drone-email
+  detach: true
   settings: 
     host: smtp
     username: user
@@ -20,12 +27,6 @@ steps:
     when:
       status: [ changed, fail ]
       
-- name: testing
-  image: golang
-  commands:
-  - go get -v -t -d ./...
-  - go test -v ./...
-
 - name: publish
   image: plugins/docker
   settings:
