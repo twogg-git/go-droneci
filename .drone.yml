@@ -43,8 +43,6 @@ steps:
 services:
 - name: smtp
   image: catatnight/postfix
-  ports:
-    - 25:25
   environment:
     - maildomain: emailboot.net
     - smtp_user: user:pwd
