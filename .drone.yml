@@ -37,9 +37,7 @@ steps:
     password: pwd
     port: 25
     skip_verify: true
-    from: drone@your-domain.com
-    recipients:
-      from_secret: MAIL_NOTIFIER
+    from: pipeline@go-droneci.com
     when:
       status: [ changed, failure ]
 
@@ -48,7 +46,7 @@ services:
   image: catatnight/postfix
   environment:
     ports: 25
-    maildomain: emailboot.net
+    maildomain: go-droneci.com
     smtp_user: user:pwd
     messageSizeLimit: 40960000
     mailboxSizeLimit: 40960000
