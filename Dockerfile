@@ -1,3 +1,5 @@
+# Multi-stage Version - Final image size aprox 11MB
+
 FROM golang:1.10-alpine3.7 as builder
 WORKDIR /go/src/go-droneci/main
 COPY . .
