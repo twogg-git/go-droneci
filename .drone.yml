@@ -13,19 +13,6 @@ steps:
   commands:
   - go get -v -t -d ./...
   - go test -v ./...
-
-- name: notify
-  image: drillster/drone-email
-  detach: true
-  settings: 
-    host: smtp
-    username: user
-    password: pwd
-    port: 25
-    skip_verify: true
-    from: pipeline@go-droneci.com
-    when:
-      status: [ changed, fail ]
       
 - name: publish
   image: plugins/docker
@@ -42,6 +29,18 @@ steps:
     branch:
     - master
 
+- name: notify
+  image: drillster/drone-email
+  settings: 
+    host: smtp
+    username: user
+    password: pwd
+    port: 25
+    skip_verify: true
+    from: pipeline@go-droneci.com
+    when:
+      status: [ changed, success ]
+      
 services:
 - name: smtp
   image: catatnight/postfix
