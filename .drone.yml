@@ -32,7 +32,7 @@ steps:
 
 --- 
 kind: pipeline
-name: TwoggCI
+name: TwoggCI2
 
 steps:
 - name: build2
