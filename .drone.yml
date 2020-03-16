@@ -1,7 +1,18 @@
 kind: pipeline
 name: Pipeline
 
+services:
+- name: smtp
+  image: catatnight/postfix
+  environment:
+    ports: 25
+    maildomain: cloud.drone.io
+    smtp_user: user:pwd
+    messageSizeLimit: 40960000
+    mailboxSizeLimit: 40960000
+    
 steps:
+
 - name: build
   image: golang
   commands:
@@ -13,16 +24,6 @@ steps:
   commands:
   - go get -v -t -d ./...
   - go test -v ./...
-      
-services:
-- name: smtp
-  image: catatnight/postfix
-  environment:
-    ports: 25
-    maildomain: cloud.drone.io
-    smtp_user: user:pwd
-    messageSizeLimit: 40960000
-    mailboxSizeLimit: 40960000
 
 - name: publish
   image: plugins/docker
@@ -49,5 +50,8 @@ services:
     skip_verify: true
     from: pipeline@cloud.drone.io
     when:
-      status: [ changed, success ]
+      status: [changed, failure, success]  
+    depends_on:
+      - build
+      - smtp
       
