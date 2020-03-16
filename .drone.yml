@@ -49,6 +49,7 @@ steps:
     port: 25
     skip_verify: true
     from: pipeline@cloud.drone.io
+    recipients: [cruz.catherin@gmail.com]
     when:
       status: [changed, failure, success]  
     depends_on:
